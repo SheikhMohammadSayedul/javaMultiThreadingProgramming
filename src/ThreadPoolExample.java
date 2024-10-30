@@ -35,6 +35,6 @@ public class ThreadPoolExample {
         } catch (InterruptedException e) {
             executor.shutdownNow();
         }
-        System.out.println("All tasks is complete.");
+        System.out.println("All tasks is complete. ");
     }
 }

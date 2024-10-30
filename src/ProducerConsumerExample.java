@@ -55,7 +55,7 @@ class Consumer implements Runnable {
     @Override
     public void run() {
         try {
-            for (int i = 0; i < 20; i++) {
+            for (int i = 0; i<20; i++) {
                 buffer.consume();
                 Thread.sleep(150);
             }
