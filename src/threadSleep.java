@@ -2,7 +2,7 @@ class SleepingRunnable implements Runnable {
     @Override
     public void run() {
         try {
-            System.out.println(Thread.currentThread().getName() + " is going to sleep.");
+            System.out.println(Thread.currentThread().getName() + " is going to sleep...");
             Thread.sleep(2000);
             System.out.println(Thread.currentThread().getName() + " woke up.");
         } catch (InterruptedException e) {
