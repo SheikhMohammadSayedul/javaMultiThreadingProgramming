@@ -37,20 +37,18 @@ public class forkJoinExample {
             array[i] = i + 1;
         }
 
-        // Fork-Join approach
         ForkJoinPool pool = new ForkJoinPool();
         long startTime = System.currentTimeMillis();
         long forkJoinResult = pool.invoke(new SumTask(array, 0, array.length));
         long endTime = System.currentTimeMillis();
         System.out.println("Fork-Join sum: " + forkJoinResult + " in " + (endTime - startTime) + " ms");
 
-        // Single-threaded approach
         startTime = System.currentTimeMillis();
         long singleThreadResult = 0;
         for (int num : array) {
             singleThreadResult += num;
         }
         endTime = System.currentTimeMillis();
-        System.out.println("Single-threaded sum: " + singleThreadResult + " in " + (endTime - startTime) + " ms");
+        System.out.println("Single-threaded  sum: " + singleThreadResult + " in " + (endTime - startTime) + " ms");
     }
 }

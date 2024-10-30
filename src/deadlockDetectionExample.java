@@ -49,13 +49,12 @@ public class deadlockDetectionExample {
         t1.start();
         t2.start();
 
-        // Detect deadlocks using ThreadMXBean
         ThreadMXBean threadMXBean = ManagementFactory.getThreadMXBean();
         new Thread(() -> {
             while (true) {
                 long[] deadlockedThreads = threadMXBean.findDeadlockedThreads();
                 if (deadlockedThreads != null) {
-                    System.out.println("Deadlock detected! Resolving...");
+                    System.out.println("Deadlock detected! Resolving.....");
                     for (long id : deadlockedThreads) {
                         System.out.println("Deadlocked thread ID: " + id);
                     }
