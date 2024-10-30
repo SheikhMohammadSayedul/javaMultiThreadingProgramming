@@ -20,10 +20,10 @@ class CustomThreadPool {
 
     public synchronized void submit(Runnable task) {
         if (isShutdown) {
-            throw new IllegalStateException("Thread pool is shutdown");
+            throw new IllegalStateException("Thread pool is shutdown.");
         }
         taskQueue.add(task);
-        notify(); // Notify waiting workers
+        notify();
     }
 
     public synchronized void resize(int newSize) {

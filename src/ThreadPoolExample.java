@@ -23,13 +23,10 @@ class Task implements Runnable {
 public class ThreadPoolExample {
     public static void main(String[] args) {
         ExecutorService executor = Executors.newFixedThreadPool(3);
-
-        // Submit multiple tasks to the thread pool
         for (int i = 1; i <= 5; i++) {
             executor.submit(new Task(i));
         }
 
-        // Shut down the executor and wait for tasks to finish
         executor.shutdown();
         try {
             if (!executor.awaitTermination(5, TimeUnit.SECONDS)) {
@@ -38,6 +35,6 @@ public class ThreadPoolExample {
         } catch (InterruptedException e) {
             executor.shutdownNow();
         }
-        System.out.println("All tasks completed.");
+        System.out.println("All tasks is complete.");
     }
 }
